@@ -1,0 +1,131 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem ; 
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 100;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0; 
+}
+
+.center {
+  flex-grow: 1;
+  max-width: 400px; 
+  min-width: 100px; 
+  margin: 0 1rem; 
+}
+
+.search {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: #f9fafb;
+  color: #1f2937; 
+}
+
+.menuIcon {
+  font-size: 1.25rem;
+  color: #1f2937;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.menuIcon:hover {
+  background-color: #f3f4f6;
+}
+
+.logoImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.icon {
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.avatarContainer {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%; 
+  right: 0;
+  min-width: 150px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 0.5rem;
+  z-index: 50;
+  
+}
+
+.username {
+  font-size: 0.875rem; 
+  font-weight: 600;
+  color: #1f2937;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.5rem;
+  white-space: nowrap; 
+}
+.email {
+  font-size: 0.75rem; 
+  color: #6b7280; 
+  padding: 0 0.75rem 0.5rem; 
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.logoutButton {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #ef4444; 
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif; 
+  text-decoration: none;
+}
+
+.logoutButton:hover {
+  background-color: #fef2f2; 
+  color: #dc2626; 
+}

@@ -1,0 +1,257 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.simpleCard {
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 16px;
+}
+
+.taskInfo {
+    flex: 1;
+    min-width: 0; 
+    word-wrap: break-word;
+}
+
+.taskName {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A202C;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.projectName {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+    padding: 4px 12px;
+    background: #EDF2F7;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.taskDescription {
+    font-size: 14px;
+    color: #4A5568;
+    margin: 4px 0 0 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+.clickable {
+    cursor: pointer;
+    position: relative;
+}
+
+.clickable:hover {
+    color: #2D3748;
+}
+
+.clickable:hover::after {
+    content: "Click to view full description";
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2D3748;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.rightInfo {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.priorityBadge {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+}
+
+.priorityLabel {
+    font-size: 14px;
+    color: #4A5568;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.priorityValue {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.priorityHigh {
+    color: #FF0000;
+}
+
+.priorityMedium {
+    color: #F59E0B;
+}
+
+.priorityLow {
+    color: #10B981;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.dueDate {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #718096;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.calendarIcon {
+    display: flex;
+    align-items: center;
+    color: #718096;
+}
+
+.calendarIcon svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+}
+
+.statusIcon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005FAD
+;
+}
+
+.statusIconComplete {
+    color: #10B981;
+    font-size: 16px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.deleteButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEE2E2;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #DC2626;
+    padding: 0;
+}
+
+.deleteButton svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.deleteButton:hover {
+    background-color: #FCA5A5;
+    transform: scale(1.05);
+}
+
+.deleteButton:hover svg {
+    stroke: #B91C1C;
+}
+
+.editButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E0F2FE;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #0284C7;
+    padding: 0;
+}
+
+.editButton svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.editButton:hover {
+    background-color: #BAE6FD;
+    transform: scale(1.05);
+}
+
+.editButton:hover svg {
+    stroke: #0369A1;
+}
