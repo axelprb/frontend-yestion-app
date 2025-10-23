@@ -83,7 +83,7 @@ const handleSearch = React.useCallback((searchTerm) => {
 
       } catch (error) {
         console.error("Fetch failed:", error);
-        toast.error(error.response?.status === 404 ? 'Project tidak ditemukan' : 'Gagal memuat data');
+        toast.error(error.response?.status === 404 ? 'Project not found' : 'Failed to load data');
         setTasks([]);
       } finally {
         setIsLoading(false);
@@ -94,7 +94,7 @@ const handleSearch = React.useCallback((searchTerm) => {
       fetchProjectAndTasks();
     } else {
       setIsLoading(false);
-      toast.error('Project ID tidak valid');
+      toast.error('Project ID is not specified');
     }
   }, [projectId]);
 
