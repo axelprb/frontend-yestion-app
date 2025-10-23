@@ -24,9 +24,9 @@ const LoginPage = () => {
       const token = response.data.token;
       const user = response.data.user; 
 
-      console.log(token);
+      // console.log(token);
       localStorage.setItem('authToken', token);
-      console.log(localStorage.getItem('authToken'));
+      // console.log(localStorage.getItem('authToken'));
       
       localStorage.setItem('authUser', JSON.stringify(user));
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -35,7 +35,7 @@ const LoginPage = () => {
       navigate('/dashboard'); 
 
     } catch (error) {
-      console.error('Error login:', error);
+      // console.error('Error login:', error);
       toast.error("Failed to login. Please check your credentials and try again.");
     }
   };

@@ -31,11 +31,6 @@ const ProjectPage = () => {
         });
         
         let projectsData = projectsResponse.data;
-        if (!Array.isArray(projectsData)) {
-          console.warn('Unexpected projects response shape:', projectsData);
-          projectsData = [];
-        }
-
         const projectsWithTasks = await Promise.all(projectsData.map(async (project) => {
           try {
             const tasksResponse = await axios.get(`${API_URL}/api/tasks`, {
@@ -48,10 +43,6 @@ const ProjectPage = () => {
             let rawTasks = tasksResponse.data;
             if (rawTasks && rawTasks.tasks) rawTasks = rawTasks.tasks;
             if (rawTasks && rawTasks.data) rawTasks = rawTasks.data;
-            if (!Array.isArray(rawTasks)) {
-              console.warn(`Unexpected tasks response shape for project ${project.id}:`, rawTasks);
-              rawTasks = [];
-            }
 
             return {
               ...project,
@@ -62,7 +53,7 @@ const ProjectPage = () => {
               }))
             };
           } catch (error) {
-            console.error(`Failed to fetch tasks for project ${project.id}:`, error);
+            // console.error(`Failed to fetch tasks for project ${project.id}:`, error);
             return {
               ...project,
               tasks: []
@@ -70,11 +61,11 @@ const ProjectPage = () => {
           }
         }));
 
-        console.log("Projects with tasks:", projectsWithTasks);
+        // console.log("Projects with tasks:", projectsWithTasks);
         setProjects(projectsWithTasks);
         setFilteredProjects(projectsWithTasks);
       } catch (error) {
-        console.error("Fetch projects failed:", error);
+        // console.error("Fetch projects failed:", error);
         toast.error("Failed to load projects");
         setProjects([]); 
         setFilteredProjects([]);
@@ -140,7 +131,7 @@ const ProjectPage = () => {
       toast.success(`Project "${newProject.name}" created!`);
       setIsModalOpen(false);
     } catch (error) {
-      console.error("Error create project:", error);
+      // console.error("Error create project:", error);
       if (error.response.status === 422) {
         toast.error(`Project "${projectName}" already exists!`);
       }
@@ -164,8 +155,8 @@ const ProjectPage = () => {
       
 
     } catch (error) {
-      console.error("Gagal hapus project:", error);
-      
+      // console.error("Failed to delete project:", error);
+      toast.error("Failed to delete project");
     } finally {
       setIsConfirmModalOpen(false);
       setProjectToDeleteId(null);

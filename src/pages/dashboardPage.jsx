@@ -54,9 +54,9 @@ const DashboardPage = () => {
              projectName.includes(searchLower);
     });
     
-    console.log('Search term:', searchTerm);
-    console.log('Total tasks:', tasks.length);
-    console.log('Filtered tasks:', filtered.length);
+    // console.log('Search term:', searchTerm);
+    // console.log('Total tasks:', tasks.length);
+    // console.log('Filtered tasks:', filtered.length);
     
     setFilteredTasks(filtered);
   }, [tasks]);
@@ -87,7 +87,7 @@ const DashboardPage = () => {
       );
       toast.success('Task deleted successfully');
     } catch (error) {
-      console.error('Failed to delete task:', error);
+      // console.error('Failed to delete task:', error);
       toast.error('Failed to delete task');
     } finally {
       setTaskToDelete(null);
@@ -122,13 +122,13 @@ const DashboardPage = () => {
           status_id: task.status_id || task.status || 1
         })) : [];
 
-        console.log('Normalized tasks:', normalizedTasks);
+        // console.log('Normalized tasks:', normalizedTasks);
 
         setTasks(normalizedTasks);
         setFilteredTasks(normalizedTasks);
       } catch (error) {
-        console.error("Failed to fetch tasks:", error);
-        console.error("Error details:", error.response || error);
+        // console.error("Failed to fetch tasks:", error);
+        // console.error("Error details:", error.response || error);
         setTasks([]);
         setFilteredTasks([]);
         toast.error('Failed to load tasks. Please try refreshing the page.');
@@ -159,7 +159,7 @@ const DashboardPage = () => {
         if (projectData && projectData.data) projectData = projectData.data;
         setProjects(Array.isArray(projectData) ? projectData : []);
       } catch (error) {
-        console.error('Failed to fetch projects:', error);
+        // console.error('Failed to fetch projects:', error);
         toast.error('Failed to load projects');
       }
     };
@@ -190,7 +190,7 @@ const DashboardPage = () => {
       toast.success('Task created successfully!');
       setIsTaskModalOpen(false);
     } catch (error) {
-      console.error('Failed to create task:', error);
+      // console.error('Failed to create task:', error);
       toast.error('Failed to create task. Please try again.');
     }
   };

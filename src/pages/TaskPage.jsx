@@ -41,9 +41,9 @@ const handleSearch = React.useCallback((searchTerm) => {
                projectName.includes(searchLower);
       });
       
-      console.log('Search term:', searchTerm);
-      console.log('Total tasks:', tasks.length);
-      console.log('Filtered tasks:', filtered.length);
+      // console.log('Search term:', searchTerm);
+      // console.log('Total tasks:', tasks.length);
+      // console.log('Filtered tasks:', filtered.length);
       
       setFilteredTasks(filtered);
     }, [tasks]);
@@ -56,7 +56,7 @@ const handleSearch = React.useCallback((searchTerm) => {
             'Authorization': `Bearer ${localStorage.getItem('authToken')}`
           }
         });
-        console.log("Project data:", projectResponse.data);
+        // console.log("Project data:", projectResponse.data);
         setProject(projectResponse.data);
 
         const tasksResponse = await axios.get(`${API_URL}/api/tasks`, {
@@ -65,16 +65,12 @@ const handleSearch = React.useCallback((searchTerm) => {
             'Authorization': `Bearer ${localStorage.getItem('authToken')}`
           }
         });
-        console.log("Tasks data:", tasksResponse.data);
+        // console.log("Tasks data:", tasksResponse.data);
         
         let rawTasks = tasksResponse.data;
         if (rawTasks && rawTasks.tasks) rawTasks = rawTasks.tasks;
         if (rawTasks && rawTasks.data) rawTasks = rawTasks.data;
-        if (!Array.isArray(rawTasks)) {
-          console.warn('Unexpected tasks response shape:', rawTasks);
-          rawTasks = [];
-        }
-
+      
         setTasks(rawTasks.map(task => ({
           ...task,
           id: task.id || task.task_id,
@@ -82,7 +78,7 @@ const handleSearch = React.useCallback((searchTerm) => {
         })));
 
       } catch (error) {
-        console.error("Fetch failed:", error);
+        // console.error("Fetch failed:", error);
         toast.error(error.response?.status === 404 ? 'Project not found' : 'Failed to load data');
         setTasks([]);
       } finally {
@@ -155,7 +151,7 @@ const handleSearch = React.useCallback((searchTerm) => {
       setIsModalOpen(false);
       setTaskToEdit(null);
     } catch (error) {
-      console.error(taskToEdit ? "Failed to update task:" : "Failed to create task:", error);
+      // console.error(taskToEdit ? "Failed to update task:" : "Failed to create task:", error);
       toast.error(taskToEdit ? "Failed to update task" : "Failed to create task");
     }
   };
@@ -215,7 +211,7 @@ const handleUpdateTaskStatus = async (taskId, currentStatusId) => {
       setTasks(currentTasks => currentTasks.filter(t => t.id !== taskToDelete.id));
       toast.success('Task deleted successfully');
     } catch (error) {
-      console.error('Failed to delete task:', error);
+      // console.error('Failed to delete task:', error);
       toast.error('Failed to delete task');
     } finally {
       setTaskToDelete(null);
@@ -232,13 +228,13 @@ const handleUpdateTaskStatus = async (taskId, currentStatusId) => {
       const title = (task?.title || '').toLowerCase().trim();
       const description = (task?.description || '').toLowerCase().trim();
       
-      console.log('Searching for:', searchTermLower);
-      console.log('Task title:', title);
-      console.log('Task description:', description);
-      console.log('Match result:', {
-        titleMatch: title.includes(searchTermLower),
-        descriptionMatch: description.includes(searchTermLower)
-      });
+      // console.log('Searching for:', searchTermLower);
+      // console.log('Task title:', title);
+      // console.log('Task description:', description);
+      // console.log('Match result:', {
+      //   titleMatch: title.includes(searchTermLower),
+      //   descriptionMatch: description.includes(searchTermLower)
+      // });
       
       if (title === searchTermLower || description === searchTermLower) {
         return true;

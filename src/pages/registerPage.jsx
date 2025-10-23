@@ -30,12 +30,12 @@ const RegisterPage = () => {
         password_confirmation: confirmPassword 
       });
 
-      console.log('Respon sukses:', response.data);
+      // console.log('Response during registration:', response.data);
       toast.success("Registration successful! Please login.");
       navigate('/login');
 
     } catch (error) {
-      console.error('Error during registration:', error);
+      // console.error('Error during registration:', error);
       if (error.response && error.response.data) {
         if (error.response.data.message) {
           toast.error(`Registration failed: ${error.response.data.message}`);
