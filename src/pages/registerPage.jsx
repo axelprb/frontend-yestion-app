@@ -105,7 +105,7 @@ const RegisterPage = () => {
               type="password"
               id="confirmPassword"
               className={styles.input}
-              placeholder="Ulangi password Anda"
+              placeholder="Confirm your password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
