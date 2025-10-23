@@ -5,6 +5,7 @@ import TaskCard from '../components/taskCard';
 import NewTask from '../components/NewTask';
 import axios from 'axios';
 import ConfirmationModal from '../components/ConfirmDelete';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 
 const greetings = [
   "Let's make today productive",
@@ -21,7 +22,6 @@ const getRandomGreeting = () => {
 
 const API_URL = "https://api-yestion.farelfebryan.my.id";
 
-import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 
 const DashboardPage = () => {
   const navigate = useNavigate();
