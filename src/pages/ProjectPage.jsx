@@ -8,7 +8,7 @@ import ConfirmDelete from '../components/ConfirmDelete';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const API_URL = "http://70.153.82.125";
+const API_URL = "https://api-yestion.farelfebryan.my.id";
 
 const ProjectPage = () => {
   const { setSearchCallback } = useOutletContext();

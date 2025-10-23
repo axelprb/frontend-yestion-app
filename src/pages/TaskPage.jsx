@@ -9,7 +9,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 
-const API_URL = "http://70.153.82.125";
+const API_URL = "https://api-yestion.farelfebryan.my.id";
 
 const TaskPage = () => {
   const { projectId } = useParams();
