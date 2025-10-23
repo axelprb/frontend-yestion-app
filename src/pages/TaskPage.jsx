@@ -116,7 +116,7 @@ const handleSearch = React.useCallback((searchTerm) => {
       description: taskData.description,
       project_id: projectId,
       status_id: taskToEdit ? taskToEdit.status_id : 1,
-      priority_id: (taskData.priority ? parseInt(taskData.priority) : null) || null,
+      priority_id: taskData.priority ? parseInt(taskData.priority) : null,
       due_date: taskData.dueDate || null,
     };
 
