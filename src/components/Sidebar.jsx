@@ -34,7 +34,7 @@ const handleLogout = async () => {
     try {
       
     } catch (error) {
-      console.error("Error logout:", error);
+      // console.error("Error logout:", error);
     } finally {
       localStorage.removeItem('authToken');
       localStorage.removeItem('authUser');

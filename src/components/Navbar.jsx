@@ -15,7 +15,7 @@ const Navbar = ({ toggleSidebar, user, onSearch }) => {
     try {
       
     } catch (error) {
-      console.error("Error logout:", error);
+      // console.error("Error logout:", error);
     } finally {
       localStorage.removeItem('authToken');
       localStorage.removeItem('authUser');
@@ -25,7 +25,7 @@ const Navbar = ({ toggleSidebar, user, onSearch }) => {
   };
 
   return (
-    console.log(localStorage.getItem('authUser')),
+    // console.log(localStorage.getItem('authUser')),
     <nav className={styles.navbar}>
       <div className={styles.left}>
         <button className={styles.menuIcon} onClick={toggleSidebar}>☰</button>

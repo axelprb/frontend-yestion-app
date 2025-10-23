@@ -117,16 +117,6 @@ const ProjectPage = () => {
       });
       
       const newProject = response.data.project || response.data.data || response.data; 
-
-      // // 5. VALIDASI DATA BARU (PENTING!)
-      // if (!newProject || !newProject.id || !newProject.name) {
-      //    console.error("Data project baru dari API nggak lengkap!", newProject);
-      //    alert("Gagal nambah project ke list (data API aneh). Coba refresh.");
-      //    setIsModalOpen(false);
-      //    return; // Stop di sini
-      // }
-      // debug;
-
       setProjects(prevProjects => [newProject, ...prevProjects]);
       toast.success(`Project "${newProject.name}" created!`);
       setIsModalOpen(false);
