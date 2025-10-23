@@ -106,9 +106,9 @@ const NewTask = ({ isOpen, onClose, onSubmit, projects = [] }) => {
               className={styles.input}
             >
               <option value="">Select priority</option>
-              <option value="1">High</option>
+              <option value="1">Low</option>
               <option value="2">Medium</option>
-              <option value="3">Low</option>
+              <option value="3">High</option>
             </select>
           </div>
 
